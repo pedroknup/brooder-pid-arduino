@@ -72,7 +72,7 @@ int time;
 
 void setup()
 {
-  // Inicializa os pinos como entrada ou sa�da
+  // Inicializa os pinos como entrada ou saida
   if (!bmp.begin()) {
   Serial.println("Could not find a valid BMP085 sensor, check wiring!");
 
@@ -81,14 +81,10 @@ void setup()
   DHT.read11(dht_dpin); 
   pinMode(triac, OUTPUT);
   pinMode(pot, INPUT);
- // pinMode(pinoRecep,INPUT);
- // pinMode(pinoRecp,INPUT);
   pinMode(zc, INPUT_PULLUP); //Entrada para deteccao de passagem por zero da rede eletrica.
   Serial.begin(9600); // Liga a serial
- // receptorIr.enableIRIn();
   digitalWrite(RECV_PIN,HIGH);
-  // Associa a borda de descida do detetor de zero com
-  //   a fun��o dimmer(), que aciona o triac
+
   attachInterrupt(1, passagem_por_zero, FALLING);
   noInterrupts(); 
   digitalWrite(triac,LOW);
@@ -120,8 +116,6 @@ display.println("");
  
   t=millis();
 
-  
-//  delay(2500);
 }
 
 
@@ -208,7 +202,7 @@ void dimmer(void)
   delayMicroseconds(10); 
   digitalWrite(triac, LOW);
   Timer1.stop();
-  t1=time;// acrescentei esta linha para monitorar os pulsos no pino D3
+  t1=time;
 }
 
 void refresh_temporizacao_Triac(void)
