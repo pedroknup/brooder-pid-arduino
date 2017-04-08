@@ -4,12 +4,12 @@ Chocadeira caseira com controle automático de temperatura.
 
 
 O que foi utilizado até agora:
-Arduino Uno
-Dimmer 
-Lâmpada 60w
-Sensor bmp180
-2 coolers 5V
-LCD Nokia 5110 
+Arduino Uno;
+Dimmer;
+Lâmpada 60w;
+Sensor bmp180;
+2 coolers 5V;
+LCD Nokia 5110; 
 
 Caixa Isopor 21L
 
